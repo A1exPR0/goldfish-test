@@ -585,6 +585,32 @@ document.querySelector(".table__header--tools--switch").addEventListener("click"
         btn.classList.toggle("selected");
     });
 });
+document.addEventListener('DOMContentLoaded', ()=>{
+    let arr = Array.from(document.querySelectorAll(".icons__column>*"));
+    // console.log(arr);
+    arr.forEach((icon1)=>{
+        icon1.addEventListener("mouseover", (e)=>{
+            let icons = document.querySelectorAll(".icons__column>*");
+            icons.forEach((icon)=>{
+                // console.log(icon);
+                if (icon.classList.contains(e.target.classList)) {
+                    icon.style.opacity = 1;
+                    icon.style.transition = "0.3s all";
+                }
+            });
+        });
+        icon1.addEventListener("mouseleave", (e)=>{
+            let icons = document.querySelectorAll(".icons__column>*");
+            icons.forEach((icon)=>{
+                // console.log(icon);
+                if (icon.classList.contains(e.target.classList)) {
+                    icon.style.opacity = 0.7;
+                    icon.style.transition = "0.3s all";
+                }
+            });
+        });
+    });
+});
 
 },{}]},["ekZOA","hGTRL"], "hGTRL", "parcelRequire94c2")
 

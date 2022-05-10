@@ -126,7 +126,7 @@ button{
     &__wrapper{
         overflow: auto;
         max-width: 100%;
-        max-height: 80vh;
+        // max-height: 80vh;
     }
     &__content{
         padding: 0;
@@ -141,6 +141,7 @@ button{
             position: -webkit-sticky;
             left: 0;
             min-width: 300px;
+            max-width: 450px;
             border:1px solid rgba($color:#11223E , $alpha: 0.2);
             padding: 16px 14px;
             text-align: left;
@@ -203,13 +204,62 @@ button{
             font-size: 14px;
             line-height: 18px;
             color: #11223E;
+            .cell__wrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .caption{
+                    display: flex;
+                    justify-items: start;
+                    align-items: center;
+                }
+            }
+            .icons{
+                flex:1;
+                display: inline-flex;
+                text-align: right;
+                // margin-left: 0px;
+            }
+            .fa-star{
+                // float: right;
+                // color: #FFF;
+                // stroke:1px solid #11223E;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                &.checked{
+                    opacity: 1;
+                    color:#F5A623;
+                }
+                
+            }
+            .fa-angle-right{
+                // float: right;
+            }
         }
         tbody tr:hover td{
             background-color:#F9f9f9;
+            .fa-star{
+                opacity: 0.2;
+                transition: all 0.15s ease-in-out;
+                &:hover{
+                    color: #F5A623;
+                    opacity: 1;
+                    transition: all 0.15s ease-in-out;
+                }
+            }
         }
         .date{
             width:45px;
         }
+        .additional-row>td.sticky--first, .additional-row>td.sticky--second,.additional-row>td{
+            border: none;
+        }
+        .additional-row{
+            height:0;
+            display: none;
+            transition: 1s all ease-in-out;
+        }
+
         thead{
             position: sticky;
             top: 0;

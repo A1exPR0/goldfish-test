@@ -42,4 +42,12 @@ arrows.forEach((arrow)=>{
         }}
 
     })
-})
+});
+document.querySelector(".table__header--tools--switch").addEventListener("click",(e)=>{
+    console.log("btns liostener");
+    // let btn=e.target;
+    let arr=[...e.target.parentNode.children]
+    arr.forEach((btn)=>{
+        btn.classList.toggle("selected");
+    })
+});

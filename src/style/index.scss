@@ -7,13 +7,13 @@ $accentColor:#75B926;
     margin: 0;
     box-sizing: border-box;
     &:focus{
-        outline: 1px solid $mainColor;
-        box-shadow: 0px 0px 8px rgba($color:$mainColor, $alpha: 0.40);
+        outline: 0.1rem solid $mainColor;
+        box-shadow: 0px 0px 0.8rem rgba($color:$mainColor, $alpha: 0.40);
     }
 }
 
 html{
-    font-size: 14px;
+    font-size: 10px;
 }
 
 body{
@@ -28,43 +28,76 @@ button{
 
 .table{
     background: #FFFFFF;
-    padding: 40px;
-    margin: 20px;
-    border: 1px solid rgba(17, 34, 62, 0.05);
-    border-radius: 5px;
+    padding: 4rem;
+    margin: 2rem 1rem;
+    border: 0.1rem solid rgba(17, 34, 62, 0.05);
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
+    @media (max-width:500px){
+        padding: 0.5rem;
+    }
 
     &__header{
         display: flex;
-        gap:30px;
+        gap:3rem;
         flex-direction: column;
         &--tools{
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
+            // flex-flow: wrap;
+            // min-width: 550px;
             flex-direction: row;
             justify-content: space-between;
+            &--switch button{
+                float:left;
+                margin-right:0 ;
+                border-radius: 0.5rem 0 0 0.5rem ;
+                opacity: 0.5;
+                &:last-child{
+                    border-radius:0 0.5rem 0.5rem 0;
+                    border-left: 0;
+                }
+                &.selected{
+                    opacity:1
+                }
+
+            }
+            @media (max-width:500px) {
+                justify-content: center;
+                
+            }
             .col{
+                min-width: 250px;
                 flex: 1;
-                gap: 20px;
+                gap: 2rem;
                 display: flex;
                 width: fit-content;
+                @media (max-width:500px) {
+                    justify-content: space-between;
+                    margin:1rem 0;
+                }
                 &:last-child{
                     justify-content: end;
+                    @media (max-width:500px) {
+                        justify-content: space-between;
+                        
+                    }
                 }
             }
             &--search{
                 font-weight: 400;
-                font-size: 16px;
-                line-height: 11px;
+                font-size: 1.6rem;
+                line-height: 1.1rem;
                 /* identical to box height, or 69% */
                 color: #11223E;
                 opacity: 0.7;
-                padding: 13px 16px;
+                padding: 1.3rem 1.6rem;
                 background: #FFFFFF;
-                border: 1px solid rgba(34, 62, 105, 0.1);
-                border-radius: 5px;
-                max-width: 240px;
+                border: 0.1rem solid rgba(34, 62, 105, 0.1);
+                border-radius: 0.5rem;
+                max-width: 24rem;
                 width: 40%;
                 }
         }
@@ -72,21 +105,21 @@ button{
             width: 100%;
             background-color:rgba($color: $secondColor, $alpha: 0.15);
             // opacity: 0.15;
-            border-radius: 5px;
+            border-radius: 0.5rem;
             .wrapper{
-                padding: 11px;
+                padding: 1.1rem;
                 display: flex;
                 flex-direction: row;
                 margin: auto;
                 justify-content: center;
                 align-items: center;
-                gap:20px;
+                gap:2rem;
                 .percentile{
                     position: relative;
-                    border-radius: 5px;
+                    border-radius: 0.5rem;
                     background-color: #FFFFFF;
                     vertical-align: middle;
-                    padding: 5px;
+                    padding: 0.5rem;
                     overflow: hidden;
                     .overlay{
                         position: absolute;
@@ -102,20 +135,20 @@ button{
                     p{
                         color:#11223E;
                         font-weight: 400;
-                        font-size: 12px;
+                        font-size: 1.2rem;
                         position: relative;
                         z-index: 2;
                     }
                 }
                 .message{
                     color:rgba($color:#11223E , $alpha: 0.5);
-                    font-size: 14px;
+                    font-size: 1.4rem;
                     font-weight: 400;
                     &::before{
                         content: "!";
-                        margin: 0 10px 0 0;
-                        border: 1px solid rgba($color:#11223E , $alpha: 0.5);
-                        padding: 1px 7px;
+                        margin: 0 1rem 0 0;
+                        border: 0.1rem solid rgba($color:#11223E , $alpha: 0.5);
+                        padding: 0.1rem 0.7rem;
                         border-radius: 100%;
                         // width:100%;
                         // height: 100%;
@@ -138,20 +171,23 @@ button{
         // min-width: 1600px;
         border-collapse:separate;
         border-spacing:0;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         .sticky--first{
             position: sticky;
             position: -webkit-sticky;
             left: 0;
-            min-width: 300px;
-            max-width: 450px;
-            border:1px solid rgba($color:#11223E , $alpha: 0.2);
-            padding: 16px 14px;
+            min-width: 30rem;
+            max-width: 45rem;
+            border:0.1rem solid rgba($color:#11223E , $alpha: 0.2);
+            padding: 1.6rem 1.4rem;
             text-align: left;
             z-index: 2;
+            @media (max-width:500px){
+                min-width: 15rem;
+            }
             i{
-                font-size: 18px;
-                margin-right:15px;
+                font-size: 1.8rem;
+                margin-right:1.5rem;
             }
            
             .table__checkbox{
@@ -165,11 +201,11 @@ button{
                     &::before{
                         content: '';
                         display: inline-block;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 5px;
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 0.5rem;
                         background-color: rgba($color: #223E69, $alpha: 0.2);
-                        margin-right: 20px;
+                        margin-right: 2rem;
                         background-repeat: no-repeat;
                         background-position: center center;
                         background-size: 50% 50%;
@@ -190,35 +226,38 @@ button{
         }
         .sticky--second{
             z-index: 2;
-            padding: 16px 14px;
+            padding: 1.6rem 1.4rem;
             position: sticky;
             position: -webkit-sticky;
-            left:300px;
-            border:1px solid rgba($color:#11223E , $alpha: 0.2);
+            left:30rem;
+            border:0.1rem solid rgba($color:#11223E , $alpha: 0.2);
             text-align: center;
+            @media (max-width:500px){
+                left: 15rem;
+            }
         }
         td,th{
             text-align: center;
-            padding: 16px 14px;
+            padding: 1.6rem 1.4rem;
             background-color: #FFFFFF;
-            border:1px solid rgba($color:#11223E , $alpha: 0.07);
+            border:0.1rem solid rgba($color:#11223E , $alpha: 0.07);
         }
         td{
-            font-size: 14px;
-            line-height: 18px;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
             color: #11223E;
             position: relative;
             .sub{
                 position: absolute;
                 // z-index: 2;
-                font-size: 10px;
-                line-height: 8px;
+                font-size: 1rem;
+                line-height: 0.8rem;
                 width:50%;
-                bottom: 5px;
+                bottom: 0.5rem;
                 left:25%;
                 // transform: translate(0,100%);
-                border-radius: 3px;
-                padding: 2px 5px;
+                border-radius: 0.3rem;
+                padding: 0.2rem 0.5rem;
             }
             .pill_green{
                 color: #355B08; 
@@ -230,42 +269,42 @@ button{
             }
             .sup{
                 position:absolute;
-                font-size: 10px;
-                line-height: 8px;
+                font-size: 1rem;
+                line-height: 0.8rem;
                 // width:50%÷;
                 text-align: right;
-                top: 5px;
-                right:5px;
+                top: 0.5rem;
+                right:0.5rem;
                 color: #355B08; 
                 
             }
             .up{
                 color: #355B08; 
-                font-size: 10px;
-                line-height: 7px;
+                font-size: 1rem;
+                line-height: 0.7rem;
                 &::before{
                     content: "";
                     width:0;
                     height:0;
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-bottom: 5px solid #355B08;
+                    border-left: 0.5rem solid transparent;
+                    border-right: 0.5rem solid transparent;
+                    border-bottom: 0.5rem solid #355B08;
                     position: absolute;
                     right:150%;
                     top:25%;
                 }
             }
             .down{
-                font-size: 10px;
-                line-height: 7px;
+                font-size: 1rem;
+                line-height: 0.7rem;
                 color: #D0021B;
                 &::before{
                     content: "";
                     width:0;
                     height:0;
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 5px solid #D0021B;
+                    border-left: 0.5rem solid transparent;
+                    border-right: 0.5rem solid transparent;
+                    border-top: 0.5rem solid #D0021B;
                     position: absolute;
                     right:150%;
                     top:25%;
@@ -294,45 +333,45 @@ button{
                 justify-content: center;
                 align-items:center;
                 .icon1{
-                    width:24px;
-                    padding: 12px;
-                    border-radius: 5px;
-                    height:24px;
+                    width:2.4rem;
+                    padding: 1.2rem;
+                    border-radius: 0.5rem;
+                    height:2.4rem;
                     background-size: 220%;
                     background-repeat: no-repeat;
                     background-position: 50% 50%;
                     background-image: url(https://s3-alpha-sig.figma.com/img/d445/76ca/25a281427004e022445a24b157372ba0?Expires=1653264000&Signature=b8LIuVriBpG7ivm1mbb6~7N~0P2wdDqLT7ScNM2PSOUbUwC8POJ6m-TKhO92DERrioc8i-sP9381msAznH-ICzyFjB5ES9O-20xhIhcOtukxeIeZezeFEXmdGMylIe1MVWiZvjpBxqoOkWaFf9In8wU5tm3AAGbws1vY6e7L49RlpM-~m-JEULNfYSNYPeeDZXtihBCfYQkgHJsyemF2f-QAq7YANhWBdkGUzvfQItdfoGZQ5ElKUbpvlr~TtFpCrRTpVnP1ebqFDsvXx84iGN-YCrZz~EP4LKuY9yq2z9C-X9JJiuLSBBNZqI6fuaGoN-LV2tmmUfcALIs-Oyrr3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
-                    margin:5px 0;
+                    margin:0.5rem 0;
                     opacity: 0.7;
                     &:hover{
                         opacity: 1;
                     }
                 }
                 .icon2{
-                    width:24px;
-                    padding: 12px;
-                    height:24px;
-                    border-radius: 5px;
-                    background-size:220%;
+                    width:2.4rem;
+                    padding: 1.2rem;
+                    border-radius: 0.5rem;
+                    height:2.4rem;
+                    background-size: 220%;
                     background-repeat: no-repeat;
                     background-position: 50% 50%;
                     background-image: url(https://s3-alpha-sig.figma.com/img/0640/549e/2c8f4b4acd23f4664b5e78de189797ae?Expires=1653264000&Signature=Pi1HfjXFIY1pnLYzTEEKYuxqq~3gMTgmV1inCTd23nek5VD0Z3~eF5fsZYYmCBJeJcXUstJv~SlN6sj8FSy~TeC4Umg2RZYIf0OEzRGhUVLbLNlqKvgRV0Ccrf6FvZjAWx0qVeInzGLdtzt1e~e4WwKiBvaf0~UT3Ilzh9G6K5R1U2edAmby2GYye0aLDgnqAy-nia5pLJVmduwrOErIJ4a3lTcIeWTbsTnyWHnPXaSLZUcHLgRxDQFIzEJab6ysU8yqrvDX7oJUghS31mALlDhhtLIGQO-CoOJ2DA5Sk8SqnhvzPA9wShY-xDzSRO6T85PjniCGralOu2gbJIcdjQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
-                    margin:5px 0;
+                    margin:0.5rem 0;
                     opacity: 0.7;
                     &:hover{
                         opacity: 1;
                     }
                 }
                 .icon3{
-                    width:24px;
-                    padding: 12px;
-                    height:24px;
-                    border-radius: 5px;
-                    background-size:220%;
+                    width:2.4rem;
+                    padding: 1.2rem;
+                    border-radius: 0.5rem;
+                    height:2.4rem;
+                    background-size: 220%;
                     background-repeat: no-repeat;
                     background-position: 50% 50%;
                     background-image: url(https://s3-alpha-sig.figma.com/img/b124/9236/08719f66f37795bcf1dad78d3693a565?Expires=1653264000&Signature=PIzYArQEUrVstACcncSIC-K1WMP5eq2Saadt9dEfOi9GohEYnlTXmZQFI9vBzMqagOFb9ysqDKuIo7cAudSQfAj0Vg0lKMpHYFsB54FKBxUdY1h7UMebrNf58lS52uaF2uiBagLt0pbJYg0PFnt9EfI72r-mTNO2xb86O0cdY-0QVRPZesPfRq660vJoMHChiQKl9xwC2q~kNBAz~YiGdqXd426pfauBlX~1nGKTp3CuOht147Nel-zo2WQYtU9qQHcAO22aT2qU10aSpe2QPttdAlCtY~moCyG0QrhcYDDh8P0jKBbZokCerlDWzYJq9Z7rNdAvJsZZ1IasK6tJ0A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
-                    margin:5px 0;
+                    margin:0.5rem 0;
                     opacity: 0.7;
                     &:hover{
                         opacity: 1;
@@ -359,11 +398,11 @@ button{
             }
             .fa-angle-right{
                 display: block;
-                width: 20px;;
-                height: 20px;;
-                padding: 5px;
+                width: 2rem;;
+                height: 2rem;;
+                padding: 0.5rem;
                 border-radius: 100%;
-                font-size: 12px;
+                font-size: 1.2rem;
                 // vertical-align: middle;
                 margin: auto 0;
                 &:hover{
@@ -387,7 +426,7 @@ button{
             }
         }
         .date{
-            width:45px;
+            width:4.5rem;
         }
         .additional-row>td.sticky--first, .additional-row>td.sticky--second,.additional-row>td{
             border: none;
@@ -407,8 +446,8 @@ button{
             height:auto;
             z-index: 2;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
             /* or 125% */
             color:rgba($color:#11223E , $alpha: 0.3);
         }
@@ -417,14 +456,14 @@ button{
 
 .button__main{
     font-weight: 400;
-    font-size: 16px;
-    line-height: 11px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     /* identical to box height, or 69% */
     background-color: $mainColor;
-    padding: 13px 20px;
+    padding: 1.3rem 2rem;
     color: #FFFFFF;
-    box-shadow: 0px 3px 7px rgba(252, 57, 105, 0.3);
-    border-radius: 5px;
+    box-shadow: 0px 0.3rem 0.7rem rgba(252, 57, 105, 0.3);
+    border-radius: 0.5rem;
     transition: 0.3s all;
     &:hover{
         transform: scale(0.98);
@@ -439,7 +478,38 @@ button{
     @extend .button__main;  
     color: #11223E;
     background-color: #FFFFFF;
-    border: 1px solid rgba($color: #223E69, $alpha: 0.2);
+    border: 0.1rem solid rgba($color: #223E69, $alpha: 0.2);
     box-shadow:none;
 
 }
+
+@media (max-width:800px) {
+    
+    html{
+        font-size: 8px;
+    }
+    
+}
+@media (min-width:1600px) {
+   
+    html{
+        font-size: 18px;
+    }
+    
+}
+
+@media (min-width:2200px) {
+    
+    html{
+        font-size: 22px;
+    }
+    
+}
+@media (min-width:3500px) {
+   
+    html{
+        font-size: 33px;
+    }
+    
+}
+

@@ -21,17 +21,25 @@ arrows.forEach((arrow)=>{
         let arrow=e.target;
         arrow.classList.toggle("checked");
         let info=arrow.parentNode.parentNode.parentNode.parentNode.nextElementSibling;
+        console.log(info);
+        if(info.classList.contains("additional-row")){
         if(arrow.classList.contains("checked")){
             arrow.style.transform="rotate(90deg)";
             arrow.style.transition="all 0.2s ease-in-out";
         //    arrow.parent.parent.parent.parent.nextSibling.style.display="block" // console.log("open additional info");
             // console.log(arrow.parentNode.parentNode.parentNode.parentNode.nextElementSibling);
+            // info.classList.toggle("collapse");
+            info.style.opacity=1;
+            info.style.transition="1s all"
             info.style.display="table-row";
         }
         else {
             arrow.style.transform="rotate(0deg)";
+            info.style.opacity=0;
             info.style.display="none";
-        }
+
+            // info.classList.toggle("collapse");
+        }}
 
     })
 })

@@ -12,6 +12,9 @@ $accentColor:#75B926;
     }
 }
 
+html{
+    font-size: 14px;
+}
 
 body{
     font-family: sans-serif;
@@ -204,6 +207,77 @@ button{
             font-size: 14px;
             line-height: 18px;
             color: #11223E;
+            position: relative;
+            .sub{
+                position: absolute;
+                // z-index: 2;
+                font-size: 10px;
+                line-height: 8px;
+                width:50%;
+                bottom: 5px;
+                left:25%;
+                // transform: translate(0,100%);
+                border-radius: 3px;
+                padding: 2px 5px;
+            }
+            .pill_green{
+                color: #355B08; 
+                background: rgba($color:#75B926, $alpha:0.3);
+            }
+            .pill_red{
+                color: #D0021B; 
+                background: rgba($color:#D0021B, $alpha:0.15);
+            }
+            .sup{
+                position:absolute;
+                font-size: 10px;
+                line-height: 8px;
+                // width:50%÷;
+                text-align: right;
+                top: 5px;
+                right:5px;
+                color: #355B08; 
+                
+            }
+            .up{
+                color: #355B08; 
+                font-size: 10px;
+                line-height: 7px;
+                &::before{
+                    content: "";
+                    width:0;
+                    height:0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 5px solid #355B08;
+                    position: absolute;
+                    right:150%;
+                    top:25%;
+                }
+            }
+            .down{
+                font-size: 10px;
+                line-height: 7px;
+                color: #D0021B;
+                &::before{
+                    content: "";
+                    width:0;
+                    height:0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid #D0021B;
+                    position: absolute;
+                    right:150%;
+                    top:25%;
+                }
+            }
+            &.shade_green{
+                background-color: rgba($color: #75B926, $alpha: 0.15) !important;
+            }
+            &.shade_red{
+                background-color: rgba($color: #D0021B, $alpha: 0.15) !important;
+
+            }
             .cell__wrapper{
                 display: flex;
                 justify-content: space-between;
@@ -212,6 +286,57 @@ button{
                     display: flex;
                     justify-items: start;
                     align-items: center;
+                }
+            }
+            .icons__column{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:center;
+                .icon1{
+                    width:24px;
+                    padding: 12px;
+                    border-radius: 5px;
+                    height:24px;
+                    background-size: 220%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-image: url(https://s3-alpha-sig.figma.com/img/d445/76ca/25a281427004e022445a24b157372ba0?Expires=1653264000&Signature=b8LIuVriBpG7ivm1mbb6~7N~0P2wdDqLT7ScNM2PSOUbUwC8POJ6m-TKhO92DERrioc8i-sP9381msAznH-ICzyFjB5ES9O-20xhIhcOtukxeIeZezeFEXmdGMylIe1MVWiZvjpBxqoOkWaFf9In8wU5tm3AAGbws1vY6e7L49RlpM-~m-JEULNfYSNYPeeDZXtihBCfYQkgHJsyemF2f-QAq7YANhWBdkGUzvfQItdfoGZQ5ElKUbpvlr~TtFpCrRTpVnP1ebqFDsvXx84iGN-YCrZz~EP4LKuY9yq2z9C-X9JJiuLSBBNZqI6fuaGoN-LV2tmmUfcALIs-Oyrr3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
+                    margin:5px 0;
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                .icon2{
+                    width:24px;
+                    padding: 12px;
+                    height:24px;
+                    border-radius: 5px;
+                    background-size:220%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-image: url(https://s3-alpha-sig.figma.com/img/0640/549e/2c8f4b4acd23f4664b5e78de189797ae?Expires=1653264000&Signature=Pi1HfjXFIY1pnLYzTEEKYuxqq~3gMTgmV1inCTd23nek5VD0Z3~eF5fsZYYmCBJeJcXUstJv~SlN6sj8FSy~TeC4Umg2RZYIf0OEzRGhUVLbLNlqKvgRV0Ccrf6FvZjAWx0qVeInzGLdtzt1e~e4WwKiBvaf0~UT3Ilzh9G6K5R1U2edAmby2GYye0aLDgnqAy-nia5pLJVmduwrOErIJ4a3lTcIeWTbsTnyWHnPXaSLZUcHLgRxDQFIzEJab6ysU8yqrvDX7oJUghS31mALlDhhtLIGQO-CoOJ2DA5Sk8SqnhvzPA9wShY-xDzSRO6T85PjniCGralOu2gbJIcdjQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
+                    margin:5px 0;
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                .icon3{
+                    width:24px;
+                    padding: 12px;
+                    height:24px;
+                    border-radius: 5px;
+                    background-size:220%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-image: url(https://s3-alpha-sig.figma.com/img/b124/9236/08719f66f37795bcf1dad78d3693a565?Expires=1653264000&Signature=PIzYArQEUrVstACcncSIC-K1WMP5eq2Saadt9dEfOi9GohEYnlTXmZQFI9vBzMqagOFb9ysqDKuIo7cAudSQfAj0Vg0lKMpHYFsB54FKBxUdY1h7UMebrNf58lS52uaF2uiBagLt0pbJYg0PFnt9EfI72r-mTNO2xb86O0cdY-0QVRPZesPfRq660vJoMHChiQKl9xwC2q~kNBAz~YiGdqXd426pfauBlX~1nGKTp3CuOht147Nel-zo2WQYtU9qQHcAO22aT2qU10aSpe2QPttdAlCtY~moCyG0QrhcYDDh8P0jKBbZokCerlDWzYJq9Z7rNdAvJsZZ1IasK6tJ0A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA),linear-gradient(#FFFFFF33,#FFFFFF33);
+                    margin:5px 0;
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
                 }
             }
             .icons{
@@ -233,7 +358,17 @@ button{
                 
             }
             .fa-angle-right{
-                // float: right;
+                display: block;
+                width: 20px;;
+                height: 20px;;
+                padding: 5px;
+                border-radius: 100%;
+                font-size: 12px;
+                // vertical-align: middle;
+                margin: auto 0;
+                &:hover{
+                    background-color: #F3F3F3;
+                }
             }
         }
         tbody tr:hover td{
@@ -247,6 +382,9 @@ button{
                     transition: all 0.15s ease-in-out;
                 }
             }
+            .fa-star.checked{
+                opacity: 1;
+            }
         }
         .date{
             width:45px;
@@ -255,8 +393,11 @@ button{
             border: none;
         }
         .additional-row{
-            height:0;
+            height:100%;
+            line-height: 100%;
+            transition-duration: .75s;
             display: none;
+            opacity: 0;
             transition: 1s all ease-in-out;
         }
 
